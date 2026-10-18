@@ -1,0 +1,48 @@
+================================================================================
+                    CUDACyclone - GUIA DE INSTALAÇÃO EM OUTRO PC
+================================================================================
+
+Este pacote contém o CUDACyclone completo, com o binário universal pré-compilado,
+código-fonte, script de mineração e o menu interativo 'iniciador.sh'.
+
+--------------------------------------------------------------------------------
+1. REQUISITOS NO NOVO PC (LINUX UBUNTU / DEBIAN / DERIVADOS):
+--------------------------------------------------------------------------------
+• Driver NVIDIA instalado e funcionando ('nvidia-smi').
+• CUDA Toolkit e ferramentas de build (caso queira recompilar):
+    sudo apt update
+    sudo apt install -y build-essential python3 python3-venv python3-pip
+• Se o novo PC não tiver o CUDA Toolkit instalado, execute:
+    sudo ./setup.sh
+
+--------------------------------------------------------------------------------
+2. COMO EXTRAIR E PREPARAR:
+--------------------------------------------------------------------------------
+1) Descompacte o arquivo ZIP no local desejado:
+    unzip CUDACyclone.zip
+    cd CUDACyclone
+
+2) Dê permissão de execução aos scripts:
+    chmod +x iniciador.sh setup.sh CUDACyclone
+
+--------------------------------------------------------------------------------
+3. COMO USAR:
+--------------------------------------------------------------------------------
+Execute o iniciador interativo:
+    ./iniciador.sh
+
+O menu interativo permite:
+[1] Compilar especificamente para RTX 20 Series (sm_75 - 2060, 2070, 2080, 1660)
+[2] Compilar especificamente para RTX 30 Series (sm_86 - 3050, 3060, 3070, 3080, 3090)
+[3] Compilar especificamente para RTX 40 Series (sm_89 - 4060, 4070, 4080, 4090)
+[4] Compilar especificamente para RTX 50 Series (sm_120 - 5070, 5080, 5090)
+[5] Compilar Universal (Fatbinary com suporte simultâneo a RTX 20, 30, 40 e 50)
+[6] Auto-Detectar a GPU do PC e compilar sob medida
+[8] Iniciar mineração no terminal (minerar-71-Particular-CUDACyclone-01.py)
+[9] Iniciar mineração em segundo plano (background com nohup)
+[10] Acompanhar logs e progresso em tempo real
+
+* NOTA: O pacote já inclui o executável 'CUDACyclone' compilado no modo Universal
+(compatível com RTX 20, 30, 40 e 50). Se a GPU for uma dessas, você já pode iniciar
+diretamente a mineração no menu!
+================================================================================
